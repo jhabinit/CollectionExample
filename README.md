@@ -1,5 +1,31 @@
 # CollectionExample
 My Collection Example  Demo
+//Search and delete in list
+public class MyCollectionIterator {
+	public static void main(String[] args){
+		String removeList="Mohan";
+		List<String> list=new ArrayList<String>();
+		list.add("Binit");
+		list.add("Rohan");
+		list.add("Mohan");
+		list.add("Ravi");
+		list.add("Anand");
+		list.add("Rohan");
+		System.out.println("List of Item::::::"+list);
+		/*Iterator<String> itr=list.iterator();
+		while(itr.hasNext()){
+			if(removeList.equals(itr.next())){
+				itr.remove();
+			}
+			//System.out.println("after Iterator:::::"+itr.next());
+		}
+		System.out.println("After Remove List::::"+list);*/
+		for(String r:list){
+			list.remove(r);
+		}
+	}
+
+}
 
 package com.delhiguru.collection;
 
