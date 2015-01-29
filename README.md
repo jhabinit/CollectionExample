@@ -142,3 +142,152 @@ public class MyListIterator {
 
 }
 
+//iterator example
+public class IteratorExample {
+	public static void main(String args[]){
+		List<Integer> list=new ArrayList<Integer>();
+		list.add(1);
+		list.add(5);
+		list.add(3);
+		//list.add("binit");
+		System.out.println("List of item"+list);
+		System.out.println("to get idex......."+list.get(0));
+		System.out.println("Does list contains 5? "+list.contains("5"));
+		list.add(2,11);
+		System.out.println("after List of item"+list);
+		System.out.println("size of list of item"+list.size());
+		System.out.println("Index of list of item"+list.indexOf(5));
+		Collections.sort(list);
+        System.out.println("After sort"+list);
+        
+       /* List<String> list1=new ArrayList<String>();
+		list1.add("1");
+		list1.add("binit");
+		list1.add("ram");
+		list1.add("aman");
+		list1.add("10");
+		list1.add("5");
+		//list.add("binit");
+		System.out.println("List of item"+list1);
+        Collections.sort(list1);
+        System.out.println("After sort"+list1);
+        Iterator<String> itr=list1.iterator();
+        	while(itr.hasNext())
+        	{
+        		System.out.println("list-------"+itr.next());
+        	}
+        
+        	
+        	Map<Integer,String> map=new HashMap<Integer,String>();
+        		map.put(1,"binit");
+        		map.put(2, "mohan");
+        		map.put(3, "rahul");
+        		map.put(4, "binod");
+        		map.put(5,"varsha");
+        		System.out.println("List of-----"+map);
+        		
+        		*/
+        
+        List<Integer> li = new ArrayList<Integer>();
+        ListIterator<Integer> litr = null;
+        li.add(23);
+        li.add(98);
+        li.add(29);
+        li.add(71);
+        li.add(5);
+        litr=li.listIterator();
+        System.out.println("Elements in forward directiton");
+        while(litr.hasNext()){
+            System.out.println(litr.next());
+        }
+        System.out.println("Elements in backward directiton");
+        while(litr.hasPrevious()){
+            System.out.println(litr.previous());
+        }
+        
+        String removeElem = "Perl";
+		List<String> myList = new ArrayList<String>();
+		myList.add("Java");
+		myList.add("Unix");
+		myList.add("Oracle");
+		myList.add("C++");
+		myList.add("Perl");
+		System.out.println("Before remove:");
+		System.out.println(myList);
+		Iterator<String> itr = myList.iterator();
+		while(itr.hasNext()){
+			if(removeElem.equals(itr.next())){
+				itr.remove();
+			}
+		}
+		System.out.println("After remove:");
+		System.out.println(myList);
+		
+		
+		 Vector<String> lang = new Vector<String>();
+	        Enumeration<String> en = null;
+	        lang.add("JAVA");
+	        lang.add("JSP");
+	        lang.add("SERVLET");
+	        lang.add("EJB");
+	        lang.add("PHP");
+	        lang.add("PERL");
+	        en = lang.elements();
+	        while(en.hasMoreElements()){
+	            System.out.println(en.nextElement());
+	        }
+        	
+	        
+	        Hashtable<String, String> hm = new Hashtable<String, String>();
+			//add key-value pair to Hashtable
+			hm.put("first", "FIRST INSERTED");
+			hm.put("second", "SECOND INSERTED");
+			hm.put("third","THIRD INSERTED");
+			System.out.println(hm);
+			Set<String> keys = hm.keySet();
+			for(String key: keys){
+				System.out.println("Value of "+key+" is: "+hm.get(key));
+			}
+			
+			
+			
+			HashMap<String, String> hm1 = new HashMap<String, String>();
+			//add key-value pair to hashmap
+			hm1.put("first", "FIRST INSERTED");
+			hm1.put("second", "SECOND INSERTED");
+			hm1.put("third","THIRD INSERTED");
+			System.out.println(hm1);
+			
+			Set<String> keys1 = hm.keySet();
+			for(String key: keys1)
+			{ 
+				System.out.println("Value of "+key+" is: "+hm.get(key));
+			} 
+			//getting value for the given key from hashmap
+			System.out.println("Value of second: "+hm1.get("second"));
+			System.out.println("Is HashMap empty? "+hm1.isEmpty());
+			hm1.remove("third");
+			System.out.println(hm1);
+			System.out.println("Size of the HashMap: "+hm1.size());
+			
+			
+			if(hm1.containsValue("SECOND INSERTED")){
+				System.out.println("The hashmap contains value SECOND INSERTED");
+			} else {
+				System.out.println("The hashmap does not contains value SECOND INSERTED");
+			}
+			
+			//How to get all keys from HashMap?
+			//Set<String> keys = hm.keySet();
+			for(String key: keys){
+				System.out.println(key);
+			}
+			
+			
+			//How to get entry set from HashMap?
+			Set<Entry<String, String>> entires = hm.entrySet();
+			for(Entry<String,String> ent:entires){
+				System.out.println(ent.getKey()+" ==> "+ent.getValue());
+			}
+        
+	}
